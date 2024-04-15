@@ -12,7 +12,7 @@ import Contact from '../components/Contact';
 function Home() {
     const params = useParams();
     const navigate = useNavigate();
-    
+
     const userId = '65b3a22c01d900e96c4219ae'; //John doe
 
     const BASE_URL = 'https://portfolio-backend-30mp.onrender.com/api/v1';
@@ -41,9 +41,9 @@ function Home() {
         fetchUserData();
     }, [params?.user, userId, navigate]);
     console.log(user?.about);
- 
 
-// filtering all the data from the API
+    // filtering all the data from the API
+    const aboutUser= user?.about;
     const sortedFilteredSkills = user?.skills?.filter((item) => item.enabled)?.sort((a, b) => a.sequence - b.sequence);
     const sortedFilteredProject = user?.projects?.filter((item) => item.enabled)?.sort((a, b) => a.sequence - b.sequence);
     const filteredServices = user?.services?.filter((item) => item.enabled);
@@ -56,18 +56,16 @@ function Home() {
         return <div className="w-full h-screen bg-black flex items-center justify-center text-center">Loading..</div>;
     }
     return (
-        <div>
-            <div className="min-h-screen  mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
-                <Header />
-                <Hero />
-                <About />
-                <Skills />
-                <Projects />
-                <Services />
-                <Timeline />
-                <Testimonial />
-                <Contact />
-            </div>
+        <div className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
+            <Header aboutUser={aboutUser} />
+            <Hero skills={sortedFilteredSkills} aboutUser={aboutUser} socialHandles={filteredSocialHandles} />
+            <About aboutUser={aboutUser} />
+            <Skills skillsData={sortedFilteredSkills} />
+            <Projects />
+            <Services />
+            <Timeline />
+            <Testimonial />
+            <Contact />
         </div>
     );
 }
