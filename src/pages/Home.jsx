@@ -26,9 +26,7 @@ function Home() {
         const fetchUserData = async () => {
             try {
                 const response = await fetch(`${BASE_URL}/get/user/${params?.user ?? userId}`);
-
                 const userData = await response.json();
-
                 document.title = `${userData?.user?.about?.name + ' - ' + userData?.user?.about?.title}`;
                 setUser(userData?.user);
                 setIsLoading(false);
@@ -42,8 +40,8 @@ function Home() {
 
         fetchUserData();
     }, [params?.user, userId, navigate]);
-    console.log(user);
-
+    console.log(user?.about);
+ 
 
 // filtering all the data from the API
     const sortedFilteredSkills = user?.skills?.filter((item) => item.enabled)?.sort((a, b) => a.sequence - b.sequence);
@@ -58,17 +56,19 @@ function Home() {
         return <div className="w-full h-screen bg-black flex items-center justify-center text-center">Loading..</div>;
     }
     return (
-        <>
-            <Header />
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Services />
-            <Timeline />
-            <Testimonial />
-            <Contact />
-        </>
+        <div>
+            <div className="min-h-screen  mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
+                <Header />
+                <Hero />
+                <About />
+                <Skills />
+                <Projects />
+                <Services />
+                <Timeline />
+                <Testimonial />
+                <Contact />
+            </div>
+        </div>
     );
 }
 
