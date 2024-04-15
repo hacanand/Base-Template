@@ -61,7 +61,7 @@ function Home() {
             <Hero skills={sortedFilteredSkills} aboutUser={aboutUser} socialHandles={filteredSocialHandles} />
             <About aboutUser={aboutUser} />
             <Skills skillsData={sortedFilteredSkills} />
-            <Projects />
+            <Projects projectsData={sortedFilteredProject} />
             <Services />
             <Timeline />
             <Testimonial />
