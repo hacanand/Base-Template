@@ -1,10 +1,10 @@
 import React from 'react'
-import { BsPersonWorkspace } from 'react-icons/bs'
+ 
 import GlowCard from './helper/glow-card'
 
 function Services({ servicesData }) {
     return (
-        <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
+        <div id="services" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
             <img src="../../public/section.svg" alt="Hero" width={1572} height={795} className="absolute top-0 -z-10" />
             <div className="flex justify-center -translate-y-[1px]">
                 <div className="w-3/4">
@@ -21,14 +21,7 @@ function Services({ servicesData }) {
             </div>
 
             <div className="py-8">
-                 
-                    {/* <div className="flex justify-center items-start">
-                        <div className="w-3/4 h-3/4">
-                            
-                        </div>
-                    </div> */}
-
-                     
+             
                         <div className="flex flex-wrap justify-center gap-6">
                             {servicesData.map((service,index) => (
                                 <GlowCard key={index} identifier={`service-${service.name}`}>

@@ -40,7 +40,7 @@ function Home() {
 
         fetchUserData();
     }, [params?.user, userId, navigate]);
-    console.log(user?.about);
+    //console.log(user?.about);
 
     // filtering all the data from the API
     const aboutUser= user?.about;
@@ -55,10 +55,10 @@ function Home() {
     if (isLoading) {
         return <div className="w-full h-screen bg-black flex items-center justify-center text-center">Loading..</div>;
     }
-    // console.log(filteredEducation);
+     //console.log(filteredEducation);
     // console.log(filteredTestimonials);
-    // console.log(filteredExperience);
-    console.log(filteredServices);
+     console.log(filteredExperience);
+    //console.log(filteredServices);
 
     return (
         <div className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
@@ -68,7 +68,7 @@ function Home() {
             <Skills skillsData={sortedFilteredSkills} />
             <Projects projectsData={sortedFilteredProject} />
             <Services servicesData={filteredServices} />
-            <Timeline />
+            <Timeline educationData={filteredEducation} experienceData={filteredExperience} />
             <Testimonial />
             <Contact />
         </div>
