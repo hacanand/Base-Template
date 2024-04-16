@@ -55,6 +55,11 @@ function Home() {
     if (isLoading) {
         return <div className="w-full h-screen bg-black flex items-center justify-center text-center">Loading..</div>;
     }
+    // console.log(filteredEducation);
+    // console.log(filteredTestimonials);
+    // console.log(filteredExperience);
+    console.log(filteredServices);
+
     return (
         <div className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
             <Header aboutUser={aboutUser} />
@@ -62,7 +67,7 @@ function Home() {
             <About aboutUser={aboutUser} />
             <Skills skillsData={sortedFilteredSkills} />
             <Projects projectsData={sortedFilteredProject} />
-            <Services />
+            <Services servicesData={filteredServices} />
             <Timeline />
             <Testimonial />
             <Contact />
