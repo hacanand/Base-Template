@@ -1,7 +1,13 @@
 import { FaGithub } from 'react-icons/fa';
 import { TbLiveView } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
-const ProjectCard = ({ project }) => {
+ 
+const ProjectCard = ({ project, selectedProject, isOpen }) => {
+    const openModal = () => {
+        isOpen(true);
+        selectedProject(project);
+    };
+
     return (
         <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group">
             <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
@@ -34,15 +40,13 @@ const ProjectCard = ({ project }) => {
                 <Link target="_blank" href={project?.liveurl}>
                     <p className="my-2 lg:my-3 cursor-pointer text-lg text-white sm:text-xl font-medium hover:text-violet-500">{project?.title}</p>
                 </Link>
-                 
-                <p className="text-sm lg:text-base text-[#d3d8e8] pb-3 lg:pb-6 line-clamp-3">{project?.description}</p>
-                {/* <div className="">
-          <Link target='_blank' href={blog.url}>
-            <button className='bg-violet-500 text-white px-3 py-1.5 rounded-full text-xs'>
-              Read More
-            </button>
-          </Link>
-        </div> */}
+
+                <p className="text-sm lg:text-base truncate text-[#d3d8e8] pb-3 lg:pb-6">{project?.description}</p>
+                <div className="">
+                    <button className="bg-violet-500 text-white px-3 py-1.5 rounded-full text-xs" onClick={openModal}>
+                        Read More
+                    </button>
+                </div>
             </div>
         </div>
     );
