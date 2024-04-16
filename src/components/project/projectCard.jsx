@@ -9,13 +9,14 @@ const ProjectCard = ({ project, selectedProject, isOpen }) => {
     };
 
     return (
-        <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group">
+        <div className="border border-[#1d293a] hover:border-[#464c6a]  bg-[#1b203e] rounded-lg relative group">
             <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
                 <img
                     src={project?.image?.url}
+                    loading="lazy"
                     height={1080}
                     width={1920}
-                    alt=""
+                    alt={project?.title}
                     className="h-full w-full group-hover:scale-110 transition-all duration-300"
                 />
             </div>
