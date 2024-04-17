@@ -69,7 +69,7 @@ function Home() {
             <Projects projectsData={sortedFilteredProject} />
             <Services servicesData={filteredServices} />
             <Timeline educationData={filteredEducation} experienceData={filteredExperience} />
-            <Testimonial testimonialData={filteredTestimonials} />
+            <Testimonial testimonialsData={filteredTestimonials} />
             <Contact />
         </div>
     );
