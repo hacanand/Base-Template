@@ -36,8 +36,8 @@ function ContactForm() {
                         <input
                             className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
                             type="email"
-                            maxLength="100"
-                            required={true}
+                           // maxLength="100"
+                           // required={true}
                             // value={input.email}
                             //onChange={(e) => setInput({ ...input, email: e.target.value })}
                             // onBlur={() => {
@@ -52,9 +52,9 @@ function ContactForm() {
                         <label className="text-base">Your Message: </label>
                         <textarea
                             className="bg-[#10172d] w-full border rounded-md  border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
-                            maxLength="500"
+                           // maxLength="500"
                             name="message"
-                            required={true}
+                           // required={true}
                             // onChange={(e) => setInput({ ...input, message: e.target.value })}
                             // onBlur={checkRequired}
                             // rows="4"

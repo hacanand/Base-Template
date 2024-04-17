@@ -20,8 +20,8 @@ function Contact({ aboutUser, socialHandles }) {
                 className="hidden lg:flex flex-col items-center absolute top-24 -right-8"
                 ref={ref}
             >
-                <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">CONTACT</span>
-                <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+                <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">CONTACT ME</span>
+                <span className="h-40 w-[2px] bg-[#1a1443]"></span>
             </m.div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <ContactForm />

@@ -28,17 +28,17 @@ function Services({ servicesData }) {
                                     <div className="p-3 relative text-white max-w-[500px] ">
                                         <img src="../../public/blur-23.svg" alt="Hero" width={400} height={400} className="absolute bottom-0 opacity-80" />
                                         <div className="flex justify-center">
-                                            <p className="text-2xl font-bold sm:text-xl text-[#16f2b3]">{service.name}</p>
+                                            <p className="text-2xl font-bold p-2 sm:text-xl text-[#16f2b3]">{service.name}</p>
                                         </div>
-                                        <div className="flex items-center gap-x-8 px-3 py-5">
-                                            <div className="text-violet-500 w-9/12  transition-all duration-300 hover:scale-105 ">
-                                      <img
+                                        <div className="flex max-sm:flex-col sm:items-center max-sm:justify-center gap-4  px-3 py-5">
+                                            <div className="text-violet-500 w-9/12  max-sm:w-full  transition-all duration-300 hover:scale-105 ">
+                                                <img
                                                 src={service.image.url}
                                                 alt={service.name}
-                                                width={120}
-                                                height={400}
-                                                className=" rounded-lg"
-                                      />
+                                                // width={120}
+                                                // height={400}
+                                                className=" rounded-lg max-sm:aspect-video max-sm:w-full w-28 max-sm:h-full"
+                                                />
                                             </div>
                                             <div>
                                                 <p className="text-base text-pink-500 sm:text-xl mb-2 font-medium uppercase">{service.charge}</p>
