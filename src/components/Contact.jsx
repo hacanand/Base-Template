@@ -5,8 +5,8 @@ import { MdAlternateEmail } from 'react-icons/md';
 import ContactForm from './helper/contactForm';
 import { motion as m } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
-import { slideInFromLeft,    slideInFromTop } from './helper/motion';
- 
+import {   slideInFromTop } from './helper/motion';
+import { fadeInUp } from './helper/motion';
 
 function Contact({ aboutUser, socialHandles }) {
     const { ref, inView } = useInView({
@@ -27,13 +27,7 @@ function Contact({ aboutUser, socialHandles }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <ContactForm />
 
-                <m.div
-                    variants={slideInFromLeft(0.5)}
-                    animate={inView ? 'animate' : 'hidden'}
-                    initial="initial"
-                    className="lg:w-3/4"
-                    ref={ref}
-                >
+                <m.div variants={fadeInUp} animate={inView ? 'animate' : 'hidden'} initial="initial" className="lg:w-3/4" ref={ref}>
                     <div className="flex flex-col gap-5 lg:gap-9">
                         <p className="text-sm md:text-xl flex items-center gap-3">
                             <MdAlternateEmail
