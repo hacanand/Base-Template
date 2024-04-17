@@ -25,7 +25,7 @@ function Testimonial({ testimonialsData }) {
                 <Marquee gradient={false} speed={80} pauseOnHover={true} pauseOnClick={true} delay={0} play={true} className='h-[700px]' direction="left">
                     {testimonialsData?.map((testimonial, id) => (
                         <div
-                            className="sm:w-80 w-96  no-scrollbar h-full flex flex-col   transition-all duration-500 mt-12 sm:mt-16 mx-16 rounded-lg group relative hover:scale-[1.15] cursor-pointer shadow-none shadow-gray-50 hover:shadow-gray-100 hover:border-violet-500 border-[#1f223c] bg-[#11152c]"
+                            className="max-sm:w-64 w-80  no-scrollbar h-full flex flex-col   transition-all duration-500 mt-12 sm:mt-16 mx-16 rounded-lg group relative hover:scale-[1.15] cursor-pointer shadow-none shadow-gray-50 hover:shadow-gray-100 hover:border-violet-500 border-[#1f223c] bg-[#11152c]"
                             key={id}
                         >
                             <div className="sm:min-h-[500px] h-full w-full no-scrollbar rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
