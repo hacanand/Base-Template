@@ -12,7 +12,7 @@ function Contact({ aboutUser, socialHandles }) {
         triggerOnce: true,
     });
     return (
-        <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
+        <div id="contact" className="my-12 lg:my-16 relative text-white">
             <m.div
                 variants={slideInFromTop(0.5)}
                 animate={inView ? 'animate' : 'hidden'}
