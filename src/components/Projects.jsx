@@ -55,7 +55,7 @@ const Projects = ({ projectsData }) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
                 {projectsData.slice(0, index).map((project) => (
-                    <ProjectCard key={project._id} project={project} selectedProject={setSelectedProject} isOpen={setIsOpen} />
+                    <ProjectCard key={project._id} project={project} index={index} selectedProject={setSelectedProject} isOpen={setIsOpen} />
                 ))}
             </div>
 

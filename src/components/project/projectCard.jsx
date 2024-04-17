@@ -1,16 +1,28 @@
 import { FaGithub } from 'react-icons/fa';
 import { TbLiveView } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import { motion as m } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { slideInFromLeft } from '../helper/motion';
  
-const ProjectCard = ({ project, selectedProject, isOpen }) => {
+const ProjectCard = ({ project, selectedProject, isOpen ,index}) => {
+    const { ref, inView } = useInView({
+        triggerOnce:true,
+    });
     const openModal = () => {
         isOpen(true);
         selectedProject(project);
     };
-
+    const animationDelay = 0.2;
     return (
-        <div className="border border-[#1d293a] hover:border-[#464c6a]  bg-[#1b203e] rounded-lg relative group">
-            <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
+        <m.div
+            variants={slideInFromLeft(0.5)}
+            initial="initial"
+            animate={inView ? 'animate' : 'hidden'}
+            transition={{ duration: 0.2, delay: animationDelay * index * 0.5 }}
+            className="border border-[#1d293a] hover:border-[#464c6a]  bg-[#1b203e] rounded-lg relative group"
+        >
+            <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg" ref={ref}>
                 <img
                     src={project?.image?.url}
                     loading="lazy"
@@ -49,7 +61,7 @@ const ProjectCard = ({ project, selectedProject, isOpen }) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </m.div>
     );
 };
 export default ProjectCard;

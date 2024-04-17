@@ -3,36 +3,16 @@ import { MdDownload } from 'react-icons/md';
 import { RiContactsFill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { textVariants } from './helper/motion';
+import { slideInFromTop } from './helper/motion';
 
-const textVariants = {
-    initial: {
-        x: -500,
-        opacity: 0,
-    },
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 1,
-            staggerChildren: 0.1,
-        },
-    },
-    scrollButton: {
-        opacity: 0,
-        y: 10,
-        transition: {
-            duration: 2,
-            repeat: Infinity,
-        },
-    },
-};
 function Hero({ skills, aboutUser, socialHandles }) {
      
     return (
         <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
             <img src="../../public/hero.svg" alt="Hero" width={1572} height={795} className="absolute -top-[98px] -z-10" />
             <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
-                <motion.article variants={textVariants} initial="initial" animate="animate">
+                <motion.article variants={slideInFromTop} initial="initial" animate="animate">
                     <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
                         <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
                             Hello, <br />
@@ -81,7 +61,12 @@ function Hero({ skills, aboutUser, socialHandles }) {
                         </div>
                     </div>
                 </motion.article>
-                <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+                <motion.div
+                    variants={slideInFromTop}
+                    initial="initial"
+                    animate="animate"
+                    className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]"
+                >
                     <div className="flex flex-row">
                         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
                         <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
@@ -180,7 +165,7 @@ function Hero({ skills, aboutUser, socialHandles }) {
                             </div>
                         </code>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

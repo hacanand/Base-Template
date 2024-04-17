@@ -2,6 +2,8 @@ import React,{useRef} from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { TbLiveView } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import { motion as m } from 'framer-motion';
+import {slideInFromBottom} from '../helper/motion';
 
 const ProjectModal = ({ project, setIsOpen }) => {
     const ref=useRef(null)
@@ -12,8 +14,14 @@ const ProjectModal = ({ project, setIsOpen }) => {
             setIsOpen(false);
         }
     };
+    
     return (
-        <div className=" absolute  top-0 w-full backdrop-blur-lg h-full flex items-center justify-center " onClick={handleClick}>
+        <m.div
+            variants={slideInFromBottom} animate="animate" initial="initial"
+            
+            className=" absolute  top-0 w-full backdrop-blur-lg h-full flex items-center justify-center "
+            onClick={handleClick}
+        >
             <div className="bg-[#1b203e] text-gray-200 md:w-2/3 p-6 rounded-lg " ref={ref}>
                 <div className=" flex flex-col   pb-6 items-center  gap-4 md:justify-between ">
                     <h2 className="text-2xl font-bold ">{project.title}</h2>
@@ -59,7 +67,7 @@ const ProjectModal = ({ project, setIsOpen }) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </m.div>
     );
 };
 

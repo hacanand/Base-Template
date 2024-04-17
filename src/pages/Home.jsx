@@ -57,7 +57,7 @@ function Home() {
     }
      //console.log(filteredEducation);
     // console.log(filteredTestimonials);
-     console.log(filteredExperience);
+     //console.log(filteredExperience);
     //console.log(filteredServices);
 
     return (
@@ -69,7 +69,7 @@ function Home() {
             <Projects projectsData={sortedFilteredProject} />
             <Services servicesData={filteredServices} />
             <Timeline educationData={filteredEducation} experienceData={filteredExperience} />
-            <Testimonial />
+            <Testimonial testimonialData={filteredTestimonials} />
             <Contact />
         </div>
     );
