@@ -2,23 +2,9 @@ import React, { useState } from 'react';
 import ProjectCard from './project/projectCard';
 import ProjectModal from './project/projectModel';
 import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+ 
 
-// const projects = [
-//   {
-//     id: 1,
-//     title: "E-commerce Website",
-//     description: "Developed a full-stack e-commerce platform with user authentication, product management, and secure payment gateway.",
-//     technologies: ["React", "Node.js", "MongoDB"],
-//   },
-//   {
-//     id: 2,
-//     title: "Portfolio Website",
-//     description: "Designed and implemented a personal portfolio website showcasing skills and projects.",
-//     technologies: ["React", "Tailwind CSS"],
-//   },
-//   // ... add more projects ...
-// ];
+
 const Projects = ({ projectsData }) => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [index, setIndex] = useState(projectsData.length / 2);
@@ -26,14 +12,6 @@ const Projects = ({ projectsData }) => {
     const handleNext = () => {
         setIndex(projectsData.length);
     };
-
-    // const handleOpenModal = (project) => {
-    //     setSelectedProject(project);
-    // };
-
-    // const handleCloseModal = () => {
-    //     setSelectedProject(null);
-    // };
 
     return (
         <div id="Projects" className="relative  border-t my-12 lg:my-24 border-[#25213b] transition-all ease-in-out duration-500">

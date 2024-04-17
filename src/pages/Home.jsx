@@ -70,7 +70,7 @@ function Home() {
             <Services servicesData={filteredServices} />
             <Timeline educationData={filteredEducation} experienceData={filteredExperience} />
             <Testimonial testimonialsData={filteredTestimonials} />
-            <Contact />
+            <Contact aboutUser={aboutUser} socialHandles={filteredSocialHandles} />
         </div>
     );
 }
