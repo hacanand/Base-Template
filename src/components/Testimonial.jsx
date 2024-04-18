@@ -1,8 +1,15 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
+import {motion as m} from 'framer-motion';
+import { fadeInUp } from './helper/motion';
+import { useInView } from 'react-intersection-observer';
+import { GiHidden } from 'react-icons/gi';
 
 function Testimonial({ testimonialsData }) {
- console.log(testimonialsData);
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
+
     return (
         <div id="skills" className="relative  z-50 border-t my-12 lg:my-24 border-[#25213b]">
             <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
@@ -13,22 +20,31 @@ function Testimonial({ testimonialsData }) {
                 </div>
             </div>
 
-            <div className="flex justify-center my-5 lg:py-8">
-                <div className="flex  items-center">
+            <div className="flex justify-center my-7 lg:py-8" ref={ref}>
+                <m.div className="flex  items-center" variants={fadeInUp(0.2)} initial="initial" animate={inView ? 'animate' : 'hidden'}>
                     <span className="sm:w-24 w-12 h-[2px] bg-[#1a1443]"></span>
                     <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl font-bold rounded-md">Testimonial</span>
                     <span className="sm:w-24 w-12 h-[2px] bg-[#1a1443]"></span>
-                </div>
+                </m.div>
             </div>
 
             <div className="w-full flex flex-wrap my-12">
-                <Marquee gradient={false} speed={80} pauseOnHover={true} pauseOnClick={true} delay={0} play={true} className='h-[700px]' direction="left">
+                <Marquee
+                    gradient={false}
+                    speed={80}
+                    pauseOnHover={true}
+                    pauseOnClick={true}
+                    delay={0}
+                    play={true}
+                    className="h-[700px]"
+                    direction="left"
+                >
                     {testimonialsData?.map((testimonial, id) => (
                         <div
-                            className="max-sm:w-64 w-80  no-scrollbar h-full flex flex-col   transition-all duration-500 mt-12 sm:mt-16 mx-16 rounded-lg group relative hover:scale-[1.15] cursor-pointer shadow-none shadow-gray-50 hover:shadow-gray-100 hover:border-violet-500 border-[#1f223c] bg-[#11152c]"
+                            className=" w-80  no-scrollbar h-full flex flex-col   transition-all duration-500 mt-12 sm:mt-16 mx-16 rounded-lg group relative hover:scale-[1.15] cursor-pointer shadow-none shadow-gray-50 hover:shadow-gray-100 hover:border-violet-500 border-[#1f223c] bg-[#11152c]"
                             key={id}
                         >
-                            <div className="sm:min-h-[500px] h-full w-full no-scrollbar rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
+                            <div className="min-h-[500px] h-full w-full no-scrollbar rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
                                 <div className="flex -translate-y-[1px] justify-center">
                                     <div className="w-3/4">
                                         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />

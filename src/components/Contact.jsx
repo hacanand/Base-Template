@@ -16,7 +16,7 @@ function Contact({ aboutUser, socialHandles }) {
         <div id="contact" className="my-12 lg:my-16 relative text-white">
             <m.div
                 variants={slideInFromTop(0.5)}
-                animate="animate"
+                animate={inView ? 'animate' : 'hidden'}
                 initial="initial"
                 className="hidden lg:flex flex-col items-center absolute top-24 -right-8"
                 ref={ref}
@@ -27,7 +27,7 @@ function Contact({ aboutUser, socialHandles }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <ContactForm />
 
-                <m.div variants={fadeInUp} animate={inView ? 'animate' : 'hidden'} initial="initial" className="lg:w-3/4" ref={ref}>
+                <m.div variants={fadeInUp(0.2)} animate={inView ? 'animate' : 'hidden'} initial="initial" className="lg:w-3/4" ref={ref}>
                     <div className="flex flex-col gap-5 lg:gap-9">
                         <p className="text-sm md:text-xl flex items-center gap-3">
                             <MdAlternateEmail

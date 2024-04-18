@@ -5,7 +5,7 @@ import GlowCard from './helper/glow-card'
 function Services({ servicesData }) {
     return (
         <div id="services" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-            <img src={blur} alt="Hero" width={1572} height={795} className="absolute top-0 -z-10" />
+            <img src={blur} alt="Hero" width={1572} height={895} className="absolute bottom-0 -z-10" />
             <div className="flex justify-center -translate-y-[1px]">
                 <div className="w-3/4">
                     <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
@@ -26,7 +26,7 @@ function Services({ servicesData }) {
                             {servicesData.map((service,index) => (
                                 <GlowCard key={index} identifier={`service-${service.name}`}>
                                     <div className="p-3 relative text-white max-w-[500px] ">
-                                        <img src={blur} alt="Hero" width={400} height={400} className="absolute bottom-0 opacity-80" />
+                                        <img src={blur} alt="Hero" width={400} height={400} className="absolute top-0 opacity-80" />
                                         <div className="flex justify-center">
                                             <p className="text-2xl font-bold p-2 sm:text-xl text-[#16f2b3]">{service.name}</p>
                                         </div>

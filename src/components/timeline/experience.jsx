@@ -4,6 +4,9 @@ import { MdCorporateFare } from 'react-icons/md';
 import { MdAccessTimeFilled } from 'react-icons/md';
 import { TbPointFilled } from 'react-icons/tb';
 import { MdSummarize } from 'react-icons/md';
+import { motion as m } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { slideInFromRight } from '../helper/motion';
 const Experience = ({ experience }) => {
     const d = new Date(experience?.startDate);
     const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
@@ -13,9 +16,17 @@ const Experience = ({ experience }) => {
     const ye2 = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d2);
     const mo2 = new Intl.DateTimeFormat('en', { month: 'short' }).format(d2);
     const endDate = `${mo2} ${ye2}`;
-
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
     return (
-        <div>
+         <m.div 
+                 variants={slideInFromRight(0.2)}
+                        initial="initial"
+                        animate={inView ? 'animate' : 'hidden'}
+                       
+                        ref={ref}
+                    >
             <ol className="relative border-s border-gray-600 pb-16">
                 <li className="  ms-6">
                     <span className="absolute flex items-center justify-center w-6 h-6   rounded-full -start-3 ring-8   ring-gray-900  bg-blue-900">
@@ -69,7 +80,7 @@ const Experience = ({ experience }) => {
                     </div>
                 </li>
             </ol>
-        </div>
+        </m.div>
     );
 };
 
