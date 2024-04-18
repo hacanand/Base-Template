@@ -3,7 +3,7 @@ import { MdDownload } from 'react-icons/md';
 import { RiContactsFill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { textVariants } from './helper/motion';
+ 
 import { slideInFromTop } from './helper/motion';
 
 function Hero({ skills, aboutUser, socialHandles }) {
