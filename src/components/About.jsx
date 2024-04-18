@@ -44,10 +44,10 @@ function About({ aboutUser }) {
                 >
                     <img
                         src={aboutUser?.avatar?.url}
-                        width={300}
-                        height={200}
-                        alt="Abu Said"
-                        className="rounded-lg object-fill transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-105 cursor-pointer"
+                        width={250}
+                        height={400}
+                        alt="profile-pic"
+                        className="rounded-lg object-cover transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-105 cursor-pointer"
                     />
                 </m.div>
             </div>
