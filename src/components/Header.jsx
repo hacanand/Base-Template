@@ -6,8 +6,8 @@ import { headerData } from '../../public/navbar';
 function Header({ aboutUser }) {
     const [toggleMenu, setToggleMenu] = useState(false);
     return (
-        <nav className="relative">
-            <nav className="backdrop-blur-sm w-full text-white">
+        <nav className=" relative">
+            <nav className="backdrop-blur-sm w-full  text-white " >
                 <div className="flex items-center justify-between py-5">
                     <div className="flex flex-shrink-0 items-center capitalize">
                         <Link to={'/'} className="font-bold text-2xl ">

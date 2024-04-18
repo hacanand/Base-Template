@@ -17,7 +17,7 @@ function Hero({ skills, aboutUser, socialHandles }) {
         <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
             <img src={svg} alt="Hero" width={1572} height={795} className="absolute -top-[98px] -z-10" />
             <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
-                <motion.article variants={slideInFromTop(0.1)} initial="initial"   animate={inView ? 'animate' : 'hidden' } ref={ref}>
+                <motion.div variants={slideInFromTop(0.1)} initial="initial"   animate={inView ? 'animate' : 'hidden' } ref={ref}>
                     <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
                         <h1 className="sm:text-3xl max-sm:text-2xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
                             Hello, <br />
@@ -66,7 +66,7 @@ function Hero({ skills, aboutUser, socialHandles }) {
                             </Link>
                         </div>
                     </div>
-                </motion.article>
+                </motion.div>
                 <motion.div
                     variants={slideInFromTop(0.1)}
                     initial="initial"

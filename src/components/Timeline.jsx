@@ -3,16 +3,16 @@ import Education from './timeline/education';
 import Experience from './timeline/experience';
 import section from '../../public/section.svg';
 import { motion as m } from 'framer-motion';
-import { fadeInUp, slideInFromTop } from './helper/motion';
+import { fadeInUp } from './helper/motion';
 import { useInView } from 'react-intersection-observer';
 
 function Timeline({ educationData, experienceData }) {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
+    const {ref, inView } = useInView({
+    triggerOnce: true,
     });
     return (
         <div id="timeline" className="relative  border-t my-12 lg:my-24 border-[#25213b]">
-            <img src={section} alt="Hero" width={1572} height={795} className="absolute top-0 -z-10" />
+            <img src={section} alt="" width={1572} height={795} className="absolute top-0 -z-10" />
             <div className="flex justify-center -translate-y-[1px]">
                 <div className="w-3/4">
                     <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />

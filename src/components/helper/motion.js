@@ -71,7 +71,7 @@ export function slideInFromLeft(delay) {
 
 export function slideInFromRight(delay) {
     return {
-        initial: { x:30, opacity: 0 },
+        initial: { x:25, opacity: 0 },
         animate: {
             x: 0,
             opacity: 1,
