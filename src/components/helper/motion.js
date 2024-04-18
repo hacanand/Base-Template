@@ -1,13 +1,58 @@
+import { delay } from "framer-motion";
+
 export const fadeInUp = {
   initial: { y: 60, opacity: 0 },
   animate: {
     y: 0,
     opacity: 1,
-    transition: {
+      transition: {
+        delay: 0.1,
       duration: 0.6,
     },
   },
 };
+export const stagger = {
+    animate: {
+        transition: {
+        staggerChildren: 0.1,
+        },
+    },
+};
+export const fadeInUpStagger = {
+    initial: {},
+    animate: {
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+};
+
+export const fadeInUpFast = {
+    initial: { y: 60, opacity: 0 },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.3,
+        },
+    },
+};
+
+export const fadeIn = {
+    initial: { opacity: 0 },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+        },
+    },
+};
+
+
+
+
+
+
 export function slideInFromLeft(delay) {
     return {
         initial: { x: -100, opacity: 0 },

@@ -10,18 +10,19 @@ function Hero({ skills, aboutUser, socialHandles }) {
      
     return (
         <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
-            <img src="../../public/hero.svg" alt="Hero" width={1572} height={795} className="absolute -top-[98px] -z-10" />
+            <img src="../../public/hero.png" alt="Hero" width={1572} height={795} className="absolute -top-[98px] -z-10" />
             <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
                 <motion.article variants={slideInFromTop} initial="initial" animate="animate">
                     <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
-                        <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
+                        <h1 className="sm:text-3xl max-sm:text-2xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
                             Hello, <br />
-                            This is <span className=" text-pink-500 capitalize">{aboutUser?.name}</span>
-                            {` , I'm a Professional `}
-                            <span className=" text-[#16f2b3]">{aboutUser.title}</span>.
+                            This is <span className=" text-pink-500 capitalize ">{aboutUser?.name},</span>
+                            <br />
+                            {`  I'm a Professional `}
+                            <span className=" text-[#16f2b3] text-nowrap">{aboutUser.title}</span>.
                         </h1>
 
-                        <h2 className="text-2xl font-bold leading-8 text-g text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
+                        <h2 className="sm:text-2xl text-xl bg-gradient-to-r from from-pink-500 text-transparent bg-clip-text to-[#16f2b3]  font-bold leading-8 text-g   md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
                             {aboutUser?.subTitle}
                         </h2>
 
@@ -142,7 +143,7 @@ function Hero({ skills, aboutUser, socialHandles }) {
                             </div>
                             <div>
                                 <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
-                                <span className="mr-2 text-white">Experiences</span>
+                                <span className="mr-2 text-white">experiences</span>
                                 <span className="text-amber-300">
                                     <span className="mr-2 text-amber-300">&gt;=</span>
                                     <span className="text-orange-400">{aboutUser?.exp_year}</span>
@@ -150,7 +151,7 @@ function Hero({ skills, aboutUser, socialHandles }) {
                             </div>
                             <div>
                                 <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
-                                <span className="mr-2 text-white">NoOfSkills</span>
+                                <span className="mr-2 text-white">noOfSkills</span>
                                 <span className="mr-2 text-amber-300">&gt;=</span>
                                 <span className="text-orange-400">{skills.length}</span>
                             </div>
